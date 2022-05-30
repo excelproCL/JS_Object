@@ -1,3 +1,11 @@
+git ini
+git add .
+git commit -m "archivos iniciales"
+git branch -M main
+git remote add origin https://github.com/excelproCL/JS_Object.git
+git push -u origin main
+
+
 npm init -y
 npm install cli-color
-git init
+
