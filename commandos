@@ -1,0 +1,3 @@
+npm init -y
+npm install cli-color
+git init
