@@ -1,27 +1,35 @@
 var clc= require ('cli-color');
 //imprime titulos
-function t (arg) {
+function tl (arg) {
     txt=arg.toUpperCase();
     console.log(clc.yellow.underline(txt+'\n'));
 }
 
 //imprime subtitulos
-function s (arg) {
+function sl (arg) {
     txt=arg.toUpperCase();
     console.log(clc.white('\n'+"*** "+txt+" ***"));
 }
 
-function c (arg) {
+function cl (arg) {
     console.log(arg);
 }
+
+function pausa(){
+cl('presione una tecla para continuar');
+process.stdin.setRawMode(true);
+process.stdin.resume();
+process.stdin.on('data', process.exit.bind(process,0));
+};
+
 
 //Limpia la consola
 console.clear(); 
 
-t('Conceptos Basicos: Creacion de un objeto , gestion de atributos');
-s('Crea un Objeto');
+tl('Conceptos Basicos: Creacion de un objeto , gestion de Propiedades');
+sl('Crea un Objeto');
 
-
+cl('var animal={ propiedad :valor}');
 var animal = {
     especie : "perro",
     habitat : "ciudad",
@@ -30,16 +38,23 @@ var animal = {
     razas:["pastor", "bulgog"],
 };
 
-c(animal);
+cl(animal);
+pausa();
 
-s('Notacion de Punto');
-c("animal.especie -> "+animal.especie);
 
-s('Notacion de Corchete');
-c("animal['nivel inteligencia'] -> "+animal['nivel inteligencia']);
+sl('Notacion de Punto');
+cl("animal.especie -> "+animal.especie);
 
-s('Actualizacion de Valores');
+sl('Notacion de Corchete');
+cl("animal['nivel inteligencia'] -> "+animal['nivel inteligencia']);
+
+sl('Actualizacion de Valores');
 animal.habitat="campo";
-c("animal.habitat='campo' -> ");
-c(animal);
+cl("animal.habitat='campo' -> ");
+cl(animal);
+
+sl('Actualizacion de Valores (arreglo)');
+cl("animal.razas.push('akita'); -> ");
+animal.razas.push('akita');
+cl(animal);
 
