@@ -15,12 +15,15 @@ function cl (arg) {
     console.log(arg);
 }
 
-function pausa(){
-cl('presione una tecla para continuar');
-process.stdin.setRawMode(true);
-process.stdin.resume();
-process.stdin.on('data', process.exit.bind(process,0));
-};
+// function pausa(){
+// cl('presione una tecla para continuar');
+// process.stdin.setRawMode(true);
+// process.stdin.resume();
+// process.stdin.on('data', process.exit.bind(process,0));
+// };
+
+
+function pausa()
 
 
 //Limpia la consola
