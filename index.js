@@ -22,8 +22,14 @@ function cl (arg) {
 // process.stdin.on('data', process.exit.bind(process,0));
 // };
 
+var keyPress;
+process.stdout.write('hola...\n');
 
-function pausa()
+process.stdin.on('data', function(data){
+    keyPress=data.toString();
+    process.exit();
+});
+
 
 
 //Limpia la consola
@@ -42,7 +48,7 @@ var animal = {
 };
 
 cl(animal);
-pausa();
+//pausa();
 
 
 sl('Notacion de Punto');
